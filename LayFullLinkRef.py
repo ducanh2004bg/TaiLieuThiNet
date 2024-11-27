@@ -14,10 +14,13 @@ except ImportError:
     import base64
     from bs4 import BeautifulSoup
 
-
+path = input("Nhập đường dẫn chứa file 'credentials.json': ")
 # Cấp quyền truy cập
 SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
-flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+flow = InstalledAppFlow.from_client_secrets_file(
+    path,
+    SCOPES,
+)
 creds = flow.run_local_server(port=0)
 
 service = build("gmail", "v1", credentials=creds)
