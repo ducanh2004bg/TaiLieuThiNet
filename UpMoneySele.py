@@ -16,7 +16,7 @@ except ImportError:
 
 
 # file_path = r"links.txt"
-file_path = input("Nhập file chứa list danh sách link Verify: ")
+file_path = input(r"Nhập đường dẫn file chứa list danh sách link Verify: ")
 
 # Đếm số dòng trong file
 with open(file_path, "r") as file:
